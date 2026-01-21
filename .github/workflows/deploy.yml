@@ -25,10 +25,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # cache: 'npm' # 已注释：没有 package-lock.json 时启用缓存会导致报错
 
       - name: Install dependencies
-        run: npm ci
+        # 使用 npm install 而不是 npm ci，因为仓库中可能没有 package-lock.json
+        run: npm install
 
       - name: Build
         run: npm run build
