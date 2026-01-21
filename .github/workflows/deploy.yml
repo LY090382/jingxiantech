@@ -24,12 +24,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm  # 启用 pnpm 缓存
+          # 注意：这里不要加 cache: pnpm！
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 8  # 或 latest
+      - name: Install pnpm
+        run: npm install -g pnpm@8
 
       - name: Install dependencies
         run: pnpm install
