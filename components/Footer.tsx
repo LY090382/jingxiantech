@@ -12,13 +12,10 @@ const Footer: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-3 mb-6">
-                            {/* Blue Square Container */}
-                            <div className="relative w-12 h-12 bg-techBlue-600 rounded-xl flex items-center justify-center shadow-lg shadow-techBlue-600/20">
-                                {/* Logo Element - Consistent with Navbar (Filled Dark) but stroke adjusted for blue background */}
-                                <div className="relative">
-                                    <Hexagon className="h-8 w-8 text-white fill-slate-900 shadow-sm" strokeWidth={1.5} />
-                                    <CircuitBoard className="h-5 w-5 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-90" />
-                                </div>
+                            <div className="relative">
+                                {/* Logo matches Navbar style: Dark filled hexagon with circuit board */}
+                                <Hexagon className="h-10 w-10 text-techBlue-500 fill-slate-900 stroke-techBlue-500 transition-colors shadow-sm rounded-full" strokeWidth={1.5} />
+                                <CircuitBoard className="h-6 w-6 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-90" />
                             </div>
                             <div className="flex flex-col items-center justify-center">
                                 <span className="font-bold text-2xl text-slate-900 tracking-[0.22em] leading-none">
@@ -58,10 +55,10 @@ const Footer: React.FC = () => {
                     <div>
                         <h3 className="text-sm font-bold text-slate-900 tracking-wider uppercase mb-6 border-l-2 border-techBlue-500 pl-3">应用领域</h3>
                         <ul className="space-y-3">
-                            <li><Link to="/applications" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">新能源汽车 (NEV)</Link></li>
-                            <li><Link to="/applications" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">消费电子</Link></li>
-                            <li><Link to="/applications" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">工业控制 & 自动化</Link></li>
-                            <li><Link to="/applications" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">5G 通信基站</Link></li>
+                            <li><Link to="/applications#automotive" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">新能源汽车 (NEV)</Link></li>
+                            <li><Link to="/applications#consumer" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">消费电子</Link></li>
+                            <li><Link to="/applications#semiconductor" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">半导体封装</Link></li>
+                            <li><Link to="/applications#general-industry" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">其它工业</Link></li>
                         </ul>
                     </div>
 
@@ -74,11 +71,11 @@ const Footer: React.FC = () => {
                             </li>
                             <li className="flex items-center gap-3 text-slate-600 text-sm group">
                                 <Phone className="h-5 w-5 text-techBlue-600 shrink-0 group-hover:scale-110 transition-transform" />
-                                <span className="font-mono group-hover:text-slate-900 transition-colors">+86 755 8888 6666</span>
+                                <span className="font-mono group-hover:text-slate-900 transition-colors">+86 180 1878 4649</span>
                             </li>
                             <li className="flex items-center gap-3 text-slate-600 text-sm group">
                                 <Mail className="h-5 w-5 text-techBlue-600 shrink-0 group-hover:scale-110 transition-transform" />
-                                <span className="group-hover:text-slate-900 transition-colors">info@jingxian.com</span>
+                                <span className="group-hover:text-slate-900 transition-colors">info@jingxian-tech.com</span>
                             </li>
                         </ul>
                     </div>
@@ -86,7 +83,7 @@ const Footer: React.FC = () => {
                 
                 <div className="mt-16 border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-500 text-xs font-medium">
-                        &copy; 2024 JingXian Technology. All rights reserved.
+                        &copy; 2026 JingXian Technology. All rights reserved.
                     </p>
                     <div className="flex gap-8">
                         <a href="#" className="text-slate-500 hover:text-techBlue-600 text-xs font-medium transition-colors">隐私政策</a>

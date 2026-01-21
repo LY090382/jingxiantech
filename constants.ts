@@ -101,10 +101,17 @@ export const SOLUTIONS: Solution[] = [
         iconName: 'Smartphone'
     },
     {
-        id: 'industrial',
-        title: '半导体与工业',
-        description: '服务于5G基站、光伏逆变器及传感器封装。提供电磁屏蔽、芯片固晶及底部填充材料。',
-        features: ['5G基站散热', '传感器封装', '芯片底部填充(Underfill)', '电磁屏蔽(EMI)'],
+        id: 'semiconductor',
+        title: '半导体封装',
+        description: '针对先进封装制程，提供芯片底部填充(Underfill)、固晶胶(Die Attach)及电磁屏蔽材料，助力5G通信与AI芯片的高性能散热与防护。',
+        features: ['芯片底部填充(Underfill)', '电磁屏蔽(EMI)', '传感器封装', '5G基站散热'],
+        iconName: 'Cpu'
+    },
+    {
+        id: 'general-industry',
+        title: '其它工业',
+        description: '广泛服务于医疗器械、可再生能源及通用工业。为关键组件提供高可靠性的粘接、密封与导热保护，确保设备长期稳定运行。',
+        features: ['医疗器械组装', '可再生能源(光伏/风电)', '通用工业粘接', '户外设备防护'],
         iconName: 'Factory'
     }
 ];
