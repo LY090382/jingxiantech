@@ -38,8 +38,7 @@ const Contact: React.FC = () => {
                                     <div>
                                         <p className="text-slate-900 font-bold text-lg">公司总部</p>
                                         <p className="text-slate-500 mt-2 leading-relaxed">
-                                            深圳市龙华区民治街道新牛社区<br />
-                                            锦绣时代广场1栋1单元1508
+                                            深圳市龙华区锦绣时代广场1栋1单元1508
                                         </p>
                                     </div>
                                 </div>
@@ -61,7 +60,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-slate-900 font-bold text-lg">电子邮件</p>
-                                        <p className="text-slate-500 mt-2">sunzhifang@jingxian-tech.com</p>
+                                        <p className="text-slate-500 mt-2">sunzf@jingxian-tech.com</p>
                                     </div>
                                 </div>
                             </div>
