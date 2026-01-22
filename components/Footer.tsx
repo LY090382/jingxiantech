@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                             </li>
                             <li className="flex items-center gap-3 text-slate-600 text-sm group">
                                 <Mail className="h-5 w-5 text-techBlue-600 shrink-0 group-hover:scale-110 transition-transform" />
-                                <span className="group-hover:text-slate-900 transition-colors">info@jingxian-tech.com</span>
+                                <span className="group-hover:text-slate-900 transition-colors">sunzhifang@jingxian-tech.com</span>
                             </li>
                         </ul>
                     </div>
