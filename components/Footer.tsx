@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-slate-600 text-sm group">
                                 <MapPin className="h-5 w-5 text-techBlue-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                                <span className="group-hover:text-slate-900 transition-colors">中国广东省深圳市<br/>南山区高新科技园 景贤科技大厦</span>
+                                <span className="group-hover:text-slate-900 transition-colors">深圳市龙华区民治街道新牛社区<br/>锦绣时代广场1栋1单元1508</span>
                             </li>
                             <li className="flex items-center gap-3 text-slate-600 text-sm group">
                                 <Phone className="h-5 w-5 text-techBlue-600 shrink-0 group-hover:scale-110 transition-transform" />

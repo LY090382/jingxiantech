@@ -38,8 +38,8 @@ const Contact: React.FC = () => {
                                     <div>
                                         <p className="text-slate-900 font-bold text-lg">公司总部</p>
                                         <p className="text-slate-500 mt-2 leading-relaxed">
-                                            中国广东省深圳市<br />
-                                            南山区高新科技园 景贤科技大厦
+                                            深圳市龙华区民治街道新牛社区<br />
+                                            锦绣时代广场1栋1单元1508
                                         </p>
                                     </div>
                                 </div>
