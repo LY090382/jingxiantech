@@ -1,18 +1,41 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 const Contact: React.FC = () => {
     const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setFormStatus('submitting');
-        // Simulate API call
-        setTimeout(() => {
+
+        const formData = new FormData(e.target as HTMLFormElement);
+        const data = {
+            name: formData.get('name') as string,
+            phone: formData.get('phone') as string,
+            company: formData.get('company') as string,
+            email: formData.get('email') as string,
+            subject: formData.get('subject') as string,
+            message: formData.get('message') as string,
+        };
+
+        try {
+            const { error } = await supabase
+                .from('contact_messages')
+                .insert([data]);
+
+            if (error) throw error;
+
             setFormStatus('success');
-            // Reset after 3 seconds
+            // 重置表单
+            (e.target as HTMLFormElement).reset();
+            // 3秒后恢复状态
             setTimeout(() => setFormStatus('idle'), 3000);
-        }, 1500);
+        } catch (error) {
+            console.error('提交失败:', error);
+            alert('提交失败,请稍后重试');
+            setFormStatus('idle');
+        }
     };
 
     return (
@@ -42,7 +65,7 @@ const Contact: React.FC = () => {
                                         </p>
                                     </div>
                                 </div>
-                                
+
                                 <div className="flex items-start gap-5">
                                     <div className="bg-blue-50 p-3 rounded-xl">
                                         <Phone className="h-6 w-6 text-techBlue-600" />
@@ -82,19 +105,46 @@ const Contact: React.FC = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-bold text-slate-700 mb-2">姓名</label>
-                                    <input 
-                                        type="text" 
-                                        id="name" 
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
                                         required
                                         className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-techBlue-500 focus:ring-2 focus:ring-techBlue-500/20 transition-all placeholder:text-slate-400"
                                         placeholder="您的姓名"
                                     />
                                 </div>
                                 <div>
+                                    <label htmlFor="phone" className="block text-sm font-bold text-slate-700 mb-2">电话号码</label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        required
+                                        className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-techBlue-500 focus:ring-2 focus:ring-techBlue-500/20 transition-all placeholder:text-slate-400"
+                                        placeholder="0755-88888888 或 手机号"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label htmlFor="company" className="block text-sm font-bold text-slate-700 mb-2">公司名称</label>
+                                    <input
+                                        type="text"
+                                        id="company"
+                                        name="company"
+                                        required
+                                        className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-techBlue-500 focus:ring-2 focus:ring-techBlue-500/20 transition-all placeholder:text-slate-400"
+                                        placeholder="您的公司"
+                                    />
+                                </div>
+                                <div>
                                     <label htmlFor="email" className="block text-sm font-bold text-slate-700 mb-2">电子邮箱</label>
-                                    <input 
-                                        type="email" 
-                                        id="email" 
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
                                         required
                                         className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-techBlue-500 focus:ring-2 focus:ring-techBlue-500/20 transition-all placeholder:text-slate-400"
                                         placeholder="name@company.com"
@@ -104,8 +154,9 @@ const Contact: React.FC = () => {
 
                             <div>
                                 <label htmlFor="subject" className="block text-sm font-bold text-slate-700 mb-2">主题</label>
-                                <select 
-                                    id="subject" 
+                                <select
+                                    id="subject"
+                                    name="subject"
                                     className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-techBlue-500 focus:ring-2 focus:ring-techBlue-500/20 transition-all"
                                 >
                                     <option>产品咨询</option>
@@ -117,23 +168,23 @@ const Contact: React.FC = () => {
 
                             <div>
                                 <label htmlFor="message" className="block text-sm font-bold text-slate-700 mb-2">留言内容</label>
-                                <textarea 
-                                    id="message" 
-                                    rows={4} 
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows={4}
                                     required
                                     className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-techBlue-500 focus:ring-2 focus:ring-techBlue-500/20 transition-all placeholder:text-slate-400"
                                     placeholder="请描述您的需求..."
                                 ></textarea>
                             </div>
 
-                            <button 
-                                type="submit" 
+                            <button
+                                type="submit"
                                 disabled={formStatus !== 'idle'}
-                                className={`w-full flex items-center justify-center gap-2 py-4 rounded-lg font-bold text-white shadow-lg transition-all transform hover:-translate-y-0.5 ${
-                                    formStatus === 'success' 
-                                        ? 'bg-techGreen-500 hover:bg-techGreen-600 shadow-techGreen-500/30' 
-                                        : 'bg-slate-900 hover:bg-techBlue-600 shadow-slate-900/20 hover:shadow-techBlue-600/30'
-                                }`}
+                                className={`w-full flex items-center justify-center gap-2 py-4 rounded-lg font-bold text-white shadow-lg transition-all transform hover:-translate-y-0.5 ${formStatus === 'success'
+                                    ? 'bg-techGreen-500 hover:bg-techGreen-600 shadow-techGreen-500/30'
+                                    : 'bg-slate-900 hover:bg-techBlue-600 shadow-slate-900/20 hover:shadow-techBlue-600/30'
+                                    }`}
                             >
                                 {formStatus === 'idle' && (
                                     <>发送信息 <Send className="h-5 w-5" /></>
