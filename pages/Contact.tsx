@@ -577,7 +577,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-slate-900 font-bold">电话咨询</p>
-                                        <p className="text-slate-500 text-sm mt-1">+86 180 1878 4649</p>
+                                        <a href="tel:+8618018784649" className="text-slate-500 text-sm mt-1 hover:text-techBlue-600 hover:underline inline-block transition-colors">+86 180 1878 4649</a>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
