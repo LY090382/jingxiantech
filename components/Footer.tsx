@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-8 relative overflow-hidden">
             {/* Decorative top line */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-techBlue-600 via-techBlue-400 to-techBlue-600"></div>
-            
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
                     <div className="col-span-1 md:col-span-1">
@@ -45,10 +45,10 @@ const Footer: React.FC = () => {
                     <div>
                         <h3 className="text-sm font-bold text-slate-900 tracking-wider uppercase mb-6 border-l-2 border-techBlue-500 pl-3">产品中心</h3>
                         <ul className="space-y-3">
-                            <li><Link to="/products" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">导热界面材料</Link></li>
-                            <li><Link to="/products" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">结构粘接胶</Link></li>
-                            <li><Link to="/products" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">三防涂覆材料</Link></li>
-                            <li><Link to="/products" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">半导体封装 (Underfill)</Link></li>
+                            <li><Link to="/products?category=THERMAL" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">导热界面材料</Link></li>
+                            <li><Link to="/products?category=ADHESIVE" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">结构粘接胶</Link></li>
+                            <li><Link to="/products?category=COATING" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">三防涂覆材料</Link></li>
+                            <li><Link to="/products?category=SEMICONDUCTOR" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">半导体封装 (Underfill)</Link></li>
                         </ul>
                     </div>
 
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
                 </div>
-                
+
                 <div className="mt-16 border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-500 text-xs font-medium">
                         &copy; 2026 JingXian Technology. All rights reserved.

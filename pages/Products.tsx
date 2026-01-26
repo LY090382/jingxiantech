@@ -1,11 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, Droplet, Thermometer, Shield, Download, FileText } from 'lucide-react';
 import { PRODUCTS } from '../constants';
 import { ProductCategory, Product } from '../types';
 
 const Products: React.FC = () => {
-    const [filter, setFilter] = useState<ProductCategory | 'All'>('All');
+    const [searchParams] = useSearchParams();
+    const categoryParam = searchParams.get('category');
+
+    // 根据URL参数设置初始分类
+    const getInitialFilter = (): ProductCategory | 'All' => {
+        if (categoryParam && categoryParam in ProductCategory) {
+            return ProductCategory[categoryParam as keyof typeof ProductCategory];
+        }
+        return 'All';
+    };
+
+    const [filter, setFilter] = useState<ProductCategory | 'All'>(getInitialFilter());
+
+    // 当URL参数变化时更新筛选
+    useEffect(() => {
+        if (categoryParam && categoryParam in ProductCategory) {
+            setFilter(ProductCategory[categoryParam as keyof typeof ProductCategory]);
+        }
+    }, [categoryParam]);
 
     const filteredProducts = filter === 'All'
         ? PRODUCTS
@@ -48,8 +67,8 @@ const Products: React.FC = () => {
                             key={cat}
                             onClick={() => setFilter(cat as any)}
                             className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-200 rounded-full border shadow-lg backdrop-blur-md ${filter === cat
-                                    ? 'bg-techBlue-600 text-white border-techBlue-600 ring-4 ring-techBlue-600/20'
-                                    : 'bg-white/90 text-slate-600 border-white hover:bg-white hover:text-techBlue-700'
+                                ? 'bg-techBlue-600 text-white border-techBlue-600 ring-4 ring-techBlue-600/20'
+                                : 'bg-white/90 text-slate-600 border-white hover:bg-white hover:text-techBlue-700'
                                 }`}
                         >
                             {cat === 'All' ? '全部产品' : cat}
