@@ -234,7 +234,7 @@ const Home: React.FC = () => {
                             </h2>
                             
                             <p className="text-slate-600 text-lg mb-10 leading-relaxed">
-                                景贤科技整合了 CollTech 与 IboxTech 的核心技术，拥有 2000m² CNAS 认证实验室。我们不只是提供胶水，而是提供基于材料科学的可靠性保障。
+                                景贤科技深耕半导体与电子封装领域，致力于核心材料的自主研发与技术突破，拥有 2000m² CNAS 认证实验室。我们不只是提供胶水，而是提供基于材料科学的可靠性保障。
                             </p>
                             
                             <div className="grid grid-cols-2 gap-y-10 gap-x-12 mt-12 mb-10">
