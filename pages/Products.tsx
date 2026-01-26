@@ -7,8 +7,8 @@ import { ProductCategory, Product } from '../types';
 const Products: React.FC = () => {
     const [filter, setFilter] = useState<ProductCategory | 'All'>('All');
 
-    const filteredProducts = filter === 'All' 
-        ? PRODUCTS 
+    const filteredProducts = filter === 'All'
+        ? PRODUCTS
         : PRODUCTS.filter(p => p.category === filter);
 
     const categories = ['All', ...Object.values(ProductCategory)];
@@ -19,9 +19,9 @@ const Products: React.FC = () => {
             <div className="relative h-[400px] flex items-center justify-center overflow-hidden bg-slate-50 border-b border-slate-200">
                 {/* Background Image - Chemistry Laboratory */}
                 <div className="absolute inset-0 z-0">
-                    <img 
-                        src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop" 
-                        alt="Chemistry Laboratory Glassware" 
+                    <img
+                        src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop"
+                        alt="Chemistry Laboratory Glassware"
                         className="w-full h-full object-cover opacity-60"
                     />
                     {/* Gradient Overlay - Fades into the slate-50 background of the page */}
@@ -30,13 +30,13 @@ const Products: React.FC = () => {
 
                 {/* Content */}
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-8">
-                     <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight drop-shadow-sm">
+                    <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight drop-shadow-sm">
                         产品中心
-                     </h1>
-                     <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
-                        源自顶尖化学实验室的材料配方。<br className="hidden md:block"/>
+                    </h1>
+                    <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+                        源自顶尖化学实验室的材料配方。<br className="hidden md:block" />
                         为您提供半导体封装、导热与结构粘接的专业解决方案。
-                     </p>
+                    </p>
                 </div>
             </div>
 
@@ -47,19 +47,18 @@ const Products: React.FC = () => {
                         <button
                             key={cat}
                             onClick={() => setFilter(cat as any)}
-                            className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-200 rounded-full border shadow-lg backdrop-blur-md ${
-                                filter === cat
+                            className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-200 rounded-full border shadow-lg backdrop-blur-md ${filter === cat
                                     ? 'bg-techBlue-600 text-white border-techBlue-600 ring-4 ring-techBlue-600/20'
                                     : 'bg-white/90 text-slate-600 border-white hover:bg-white hover:text-techBlue-700'
-                            }`}
+                                }`}
                         >
-                            {cat === 'All' ? 'All Materials' : cat}
+                            {cat === 'All' ? '全部产品' : cat}
                         </button>
                     ))}
                 </div>
 
                 {/* Product Grid */}
-                <motion.div 
+                <motion.div
                     layout
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
@@ -69,7 +68,7 @@ const Products: React.FC = () => {
                         ))}
                     </AnimatePresence>
                 </motion.div>
-                
+
                 {filteredProducts.length === 0 && (
                     <div className="text-center py-20 border-2 border-dashed border-slate-200 rounded-xl bg-slate-50">
                         <p className="text-slate-400 font-medium">No matching materials found.</p>
@@ -108,7 +107,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                     </span>
                     <FileText className="h-5 w-5 text-slate-300 group-hover:text-techBlue-500 transition-colors" />
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-techBlue-700 transition-colors">
                     {product.name}
                 </h3>
@@ -128,12 +127,12 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             </div>
 
             <div className="px-7 pb-7 mt-auto flex gap-3">
-                 <button className="flex-1 py-2.5 bg-slate-900 hover:bg-techBlue-600 text-white text-xs font-bold tracking-wide rounded-lg transition-all flex items-center justify-center shadow-lg shadow-slate-900/10 group-hover:shadow-techBlue-500/20">
+                <button className="flex-1 py-2.5 bg-slate-900 hover:bg-techBlue-600 text-white text-xs font-bold tracking-wide rounded-lg transition-all flex items-center justify-center shadow-lg shadow-slate-900/10 group-hover:shadow-techBlue-500/20">
                     View Details
-                 </button>
-                 <button className="p-2.5 border border-slate-200 text-slate-400 hover:text-techBlue-600 hover:border-techBlue-200 rounded-lg transition-colors bg-white">
+                </button>
+                <button className="p-2.5 border border-slate-200 text-slate-400 hover:text-techBlue-600 hover:border-techBlue-200 rounded-lg transition-colors bg-white">
                     <Download className="h-4 w-4" />
-                 </button>
+                </button>
             </div>
         </motion.div>
     );

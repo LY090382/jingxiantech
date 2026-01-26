@@ -1,8 +1,8 @@
 export enum ProductCategory {
-    ADHESIVE = 'Adhesive',
-    THERMAL = 'Thermal Management',
-    COATING = 'Conformal Coating',
-    SEMICONDUCTOR = 'Semiconductor Packaging'
+    THERMAL = '导热界面材料',
+    ADHESIVE = '结构粘接胶',
+    COATING = '三防涂覆材料',
+    SEMICONDUCTOR = '半导体封装 (Underfill)'
 }
 
 export interface ProductSpec {
