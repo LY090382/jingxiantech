@@ -213,13 +213,11 @@ const Contact: React.FC = () => {
                     <div key={step.id} className="flex items-center">
                         <button
                             onClick={() => setCurrentStep(step.id)}
-                            className={`flex flex-col items-center min-w-[80px] transition-all ${
-                                isActive ? 'text-techBlue-600' : isCompleted ? 'text-techGreen-500' : 'text-slate-400'
-                            }`}
+                            className={`flex flex-col items-center min-w-[80px] transition-all ${isActive ? 'text-techBlue-600' : isCompleted ? 'text-techGreen-500' : 'text-slate-400'
+                                }`}
                         >
-                            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-1 transition-all ${
-                                isActive ? 'bg-techBlue-600 text-white' : isCompleted ? 'bg-techGreen-500 text-white' : 'bg-slate-200'
-                            }`}>
+                            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-1 transition-all ${isActive ? 'bg-techBlue-600 text-white' : isCompleted ? 'bg-techGreen-500 text-white' : 'bg-slate-200'
+                                }`}>
                                 {isCompleted ? <Check className="w-5 h-5" /> : <Icon className="w-5 h-5" />}
                             </div>
                             <span className="text-xs font-medium hidden sm:block">{step.title}</span>
@@ -268,7 +266,7 @@ const Contact: React.FC = () => {
     const renderStep2 = () => (
         <div className="space-y-6">
             <h4 className="text-lg font-bold text-slate-800 mb-4">行业与商业机会 Industry & Business Opportunity</h4>
-            
+
             <div>
                 <label className={labelClass}>所属行业 Industry</label>
                 <select className={selectClass} value={formData.industry} onChange={e => updateField('industry', e.target.value)}>
@@ -327,14 +325,13 @@ const Contact: React.FC = () => {
         <div className="space-y-6">
             <h4 className="text-lg font-bold text-slate-800 mb-4">应用类型 Application Type</h4>
             <p className="text-slate-500 text-sm mb-4">请选择所有适用的应用类型 (可多选)</p>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {APPLICATION_TYPES.map(type => (
-                    <label key={type} className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer transition-all ${
-                        formData.applicationTypes.includes(type) 
-                            ? 'border-techBlue-500 bg-techBlue-50 text-techBlue-700' 
+                    <label key={type} className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer transition-all ${formData.applicationTypes.includes(type)
+                            ? 'border-techBlue-500 bg-techBlue-50 text-techBlue-700'
                             : 'border-slate-200 bg-white hover:border-slate-300'
-                    }`}>
+                        }`}>
                         <input
                             type="checkbox"
                             checked={formData.applicationTypes.includes(type)}
@@ -352,7 +349,7 @@ const Contact: React.FC = () => {
     const renderStep4 = () => (
         <div className="space-y-6">
             <h4 className="text-lg font-bold text-slate-800 mb-4">应用条件与要求 Application Conditions</h4>
-            
+
             <div>
                 <label className={labelClass}>粘合组件 Bonding components</label>
                 <input type="text" className={inputClass} placeholder="正在粘合的组件是什么?"
@@ -400,7 +397,7 @@ const Contact: React.FC = () => {
     const renderStep5 = () => (
         <div className="space-y-6">
             <h4 className="text-lg font-bold text-slate-800 mb-4">产品要求 Product Requirements</h4>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                     <label className={labelClass}>组分类型 Component type</label>
@@ -427,11 +424,10 @@ const Contact: React.FC = () => {
                 <label className={labelClass}>固化方法 Curing method (可多选)</label>
                 <div className="flex flex-wrap gap-3 mt-2">
                     {CURING_METHODS.map(method => (
-                        <label key={method} className={`flex items-center gap-2 px-4 py-2 rounded-lg border cursor-pointer transition-all ${
-                            formData.curingMethods.includes(method) 
-                                ? 'border-techBlue-500 bg-techBlue-50 text-techBlue-700' 
+                        <label key={method} className={`flex items-center gap-2 px-4 py-2 rounded-lg border cursor-pointer transition-all ${formData.curingMethods.includes(method)
+                                ? 'border-techBlue-500 bg-techBlue-50 text-techBlue-700'
                                 : 'border-slate-200 bg-white hover:border-slate-300'
-                        }`}>
+                            }`}>
                             <input
                                 type="checkbox"
                                 checked={formData.curingMethods.includes(method)}
@@ -484,7 +480,7 @@ const Contact: React.FC = () => {
     const renderStep6 = () => (
         <div className="space-y-6">
             <h4 className="text-lg font-bold text-slate-800 mb-4">预计用量与补充信息 Estimated Usage & Additional Info</h4>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                     <label className={labelClass}>单位用量 Usage per unit</label>
@@ -607,8 +603,8 @@ const Contact: React.FC = () => {
                     {/* 右侧表单 */}
                     <div className="lg:col-span-2 bg-white p-8 rounded-2xl border border-slate-200 shadow-xl">
                         {renderStepIndicator()}
-                        
-                        <div className="min-h-[400px]">
+
+                        <div>
                             {renderCurrentStep()}
                         </div>
 
@@ -617,11 +613,10 @@ const Contact: React.FC = () => {
                             <button
                                 onClick={prevStep}
                                 disabled={currentStep === 1}
-                                className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all ${
-                                    currentStep === 1 
-                                        ? 'text-slate-300 cursor-not-allowed' 
+                                className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all ${currentStep === 1
+                                        ? 'text-slate-300 cursor-not-allowed'
                                         : 'text-slate-600 hover:bg-slate-100'
-                                }`}
+                                    }`}
                             >
                                 <ChevronLeft className="w-5 h-5" /> 上一步
                             </button>
@@ -630,11 +625,10 @@ const Contact: React.FC = () => {
                                 <button
                                     onClick={nextStep}
                                     disabled={!validateStep(currentStep)}
-                                    className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all ${
-                                        validateStep(currentStep)
+                                    className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all ${validateStep(currentStep)
                                             ? 'bg-techBlue-600 text-white hover:bg-techBlue-700'
                                             : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                                    }`}
+                                        }`}
                                 >
                                     下一步 <ChevronRight className="w-5 h-5" />
                                 </button>
