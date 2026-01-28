@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hexagon, CircuitBoard, Mail, Phone, MapPin, Linkedin, Github, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import wechatQr from '../assets/wechat-qr.png';
 
 const Footer: React.FC = () => {
     return (
@@ -86,7 +87,7 @@ const Footer: React.FC = () => {
                                     </svg>
                                     <span className="text-xs font-bold text-green-700">微信</span>
                                 </div>
-                                <img src="/wechat-qr.png" alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
+                                <img src={wechatQr} alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
                             </div>
                         </div>
                     </div>

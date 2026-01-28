@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, ChevronRight, ChevronLeft, Check, Building2, Factory, Beaker, Package, FileText } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import wechatQr from '../assets/wechat-qr.png';
 
 // 表单步骤配置
 const STEPS = [
@@ -599,7 +600,7 @@ const Contact: React.FC = () => {
                                             </svg>
                                             <span className="text-xs font-bold text-green-700">微信联系</span>
                                         </div>
-                                        <img src="/wechat-qr.png" alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
+                                        <img src={wechatQr} alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
                                     </div>
                                     <div>
                                         <p className="text-green-800 font-bold text-sm">扫码添加企业微信</p>
