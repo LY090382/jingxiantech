@@ -1,9 +1,7 @@
 import React from 'react';
 import { Hexagon, CircuitBoard, Mail, Phone, MapPin, Linkedin, Github, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-// Safe access to BASE_URL
-const BASE_URL = import.meta.env?.BASE_URL || '/';
+import { ASSET_URLS } from '../constants';
 
 const Footer: React.FC = () => {
     return (
@@ -89,7 +87,7 @@ const Footer: React.FC = () => {
                                     </svg>
                                     <span className="text-xs font-bold text-green-700">微信</span>
                                 </div>
-                                <img src={`${BASE_URL}wechat-qr.png`} alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
+                                <img src={ASSET_URLS.wechatQr} alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
                             </div>
                         </div>
                     </div>

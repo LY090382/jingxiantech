@@ -3,6 +3,11 @@ import { Cpu, Smartphone, Car, Factory, Zap, Shield } from 'lucide-react';
 
 export const COMPANY_NAME = "景贤科技";
 
+export const ASSET_URLS = {
+    favicon: 'https://stgmrbxwolivdppajhlw.supabase.co/storage/v1/object/public/website-assets/favicon.png',
+    wechatQr: 'https://stgmrbxwolivdppajhlw.supabase.co/storage/v1/object/public/website-assets/wechat-qr.png'
+};
+
 // Data extracted and synthesized from CollTech and IboxTech PDFs
 export const PRODUCTS: Product[] = [
     {
