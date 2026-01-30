@@ -2,6 +2,9 @@ import React from 'react';
 import { Hexagon, CircuitBoard, Mail, Phone, MapPin, Linkedin, Github, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Safe access to BASE_URL
+const BASE_URL = import.meta.env?.BASE_URL || '/';
+
 const Footer: React.FC = () => {
     return (
         <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-8 relative overflow-hidden">
@@ -86,7 +89,7 @@ const Footer: React.FC = () => {
                                     </svg>
                                     <span className="text-xs font-bold text-green-700">微信</span>
                                 </div>
-                                <img src={`${import.meta.env.BASE_URL}wechat-qr.png`} alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
+                                <img src={`${BASE_URL}wechat-qr.png`} alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
                             </div>
                         </div>
                     </div>
