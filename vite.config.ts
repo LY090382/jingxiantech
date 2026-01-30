@@ -5,8 +5,8 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // 关键配置：设置为相对路径，适配 GitHub Pages 等子目录部署环境
-  base: './',
+  // 改为绝对路径 '/'，解决 Client-side Routing 下图片 404 问题
+  base: '/',
   resolve: {
     alias: {
       '@': process.cwd(),
