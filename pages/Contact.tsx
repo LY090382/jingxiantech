@@ -599,7 +599,7 @@ const Contact: React.FC = () => {
                                             </svg>
                                             <span className="text-xs font-bold text-green-700">微信联系</span>
                                         </div>
-                                        <img src="wechat-qr.png" alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
+                                        <img src={`${import.meta.env.BASE_URL}wechat-qr.png`} alt="微信二维码" width={72} height={72} className="w-[72px] h-[72px] rounded-lg shadow-sm bg-white p-0.5 object-cover block" />
                                     </div>
                                     <div>
                                         <p className="text-green-800 font-bold text-sm">扫码添加企业微信</p>
