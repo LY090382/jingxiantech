@@ -206,7 +206,7 @@ const Products: React.FC = () => {
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="https://images.unsplash.com/photo-1591345258414-049830560370?q=80&w=2070&auto=format&fit=crop" 
+                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" 
                         alt="Advanced Technology Background" 
                         className="w-full h-full object-cover opacity-50"
                     />
