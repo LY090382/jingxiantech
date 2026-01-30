@@ -8,8 +8,9 @@ export const ASSET_URLS = {
     wechatQr: 'https://stgmrbxwolivdppajhlw.supabase.co/storage/v1/object/public/website-assets/wechat-qr.png'
 };
 
-// Data extracted and synthesized from CollTech and IboxTech PDFs
+// Data extracted and synthesized from CollTech, IboxTech, Satino, and Mingseal PDFs
 export const PRODUCTS: Product[] = [
+    // Existing Materials
     {
         id: 'n-pu-5606',
         name: 'N-PU 5606',
@@ -86,6 +87,88 @@ export const PRODUCTS: Product[] = [
             { label: '颜色', value: '灰色' },
             { label: '触变性', value: '高' },
             { label: '可靠性', value: '双85测试通过' }
+        ]
+    },
+
+    // New Equipment Products (Derived from Mingseal/Satino PDFs)
+    {
+        id: 'jx-p2000',
+        name: 'JX-P2000 压电喷射阀',
+        category: ProductCategory.EQUIPMENT,
+        description: '新一代高速非接触式喷射系统，专为中高粘度介质设计。采用一体化压电驱动，提供卓越的工艺恢复能力与稳定性。',
+        application: ['半导体Underfill', '手机窄边框点胶', '精密涂覆', '银胶/红胶喷射'],
+        specs: [
+            { label: '最大频率', value: '1200 Hz' },
+            { label: '适用粘度', value: 'Max 500,000 cps' },
+            { label: '喷嘴加热', value: '集成加热模块' },
+            { label: '重复精度', value: 'ADJ校准 ±0.01mm' }
+        ]
+    },
+    {
+        id: 'jx-s150',
+        name: 'JX-S 精密单螺杆阀',
+        category: ProductCategory.EQUIPMENT,
+        description: '精密容积式单组份螺杆阀，通过定转子容积计量，完美解决粘度变化带来的出胶量不稳定问题。',
+        application: ['高精度锡膏印刷', 'Mini-LED封装', '导热胶分配'],
+        specs: [
+            { label: '最小点胶量', value: '0.001 ml' },
+            { label: '定子材质', value: 'FFKM (全氟醚)' },
+            { label: '驱动方式', value: '伺服电机直驱' },
+            { label: '输出压力', value: 'Max 40 Bar' }
+        ]
+    },
+    {
+        id: 'jx-d900',
+        name: 'JX-D 双组份螺杆系统',
+        category: ProductCategory.EQUIPMENT,
+        description: '专为双组份结构胶、导热胶设计的精密混合输送系统，支持从 1:1 到 10:1 的宽范围混合比。',
+        application: ['动力电池导热胶', '结构件粘接', '电子灌封'],
+        specs: [
+            { label: '混合精度', value: '±1%' },
+            { label: '混合比', value: '1:1 ~ 10:1' },
+            { label: '适用填料', value: '耐磨损陶瓷/金属' },
+            { label: '功能', value: '防堵塞/自动回吸' }
+        ]
+    },
+    {
+        id: 'jx-lsb',
+        name: 'JX-LSB 激光喷锡系统',
+        category: ProductCategory.EQUIPMENT,
+        description: '集成式激光植球装置，包含高精度锡球分送机构与激光加热模块，适用于微间ry/热敏感器件焊接。',
+        application: ['摄像头模组焊接', 'CCM音圈马达', '晶圆级植球'],
+        specs: [
+            { label: '适用锡球', value: 'Φ0.2 ~ 1.0mm' },
+            { label: '出球速度', value: '≥5 pcs/sec' },
+            { label: '氮气保护', value: '支持' },
+            { label: '使用寿命', value: '> 300万次' }
+        ]
+    },
+
+    // New Precision Parts (Derived from Satino PDF)
+    {
+        id: 'jx-nzz-tc',
+        name: '硬质合金精密喷嘴',
+        category: ProductCategory.PRECISION,
+        description: '采用进口超细晶粒钨钢加工，内孔光洁度达 Ra0.01，专门解决流体微孔堵塞与挂胶难题。',
+        application: ['压电阀喷嘴', '撞针组件', '精密雾化'],
+        specs: [
+            { label: '最小孔径', value: '0.015 mm' },
+            { label: '同心度', value: '±0.001 mm' },
+            { label: '内孔粗糙度', value: 'Ra 0.01' },
+            { label: '深径比', value: '可达 200:1' }
+        ]
+    },
+    {
+        id: 'jx-needle',
+        name: '一体化撞针组件',
+        category: ProductCategory.PRECISION,
+        description: '高精度点胶阀撞针，通过独特的R角与球头研磨工艺，确保与喷嘴的100%密封贴合，杜绝滴胶。',
+        application: ['喷射阀维修', '流体控制配件', '定制化针头'],
+        specs: [
+            { label: '材质', value: '钨钢 / 陶瓷' },
+            { label: '真圆度', value: '±0.0005 mm' },
+            { label: '耐磨性', value: 'HRC 90+' },
+            { label: '密封性', value: '气密性检测 100%' }
         ]
     }
 ];

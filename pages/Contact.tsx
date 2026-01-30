@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, ChevronRight, ChevronLeft, Check, Building2, Factory, Beaker, Package, FileText } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { ASSET_URLS } from '../constants';
+import { useLocation } from 'react-router-dom';
 
 // 表单步骤配置
 const STEPS = [
@@ -106,6 +107,18 @@ const Contact: React.FC = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [formData, setFormData] = useState<FormData>(initialFormData);
     const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state && location.state.inquiryProduct) {
+             setFormData(prev => ({ 
+                 ...prev, 
+                 additionalNotes: prev.additionalNotes 
+                    ? `[咨询产品: ${location.state.inquiryProduct}] ` + prev.additionalNotes 
+                    : `[咨询产品: ${location.state.inquiryProduct}] `
+             }));
+        }
+    }, [location]);
 
     const updateField = (field: keyof FormData, value: string | string[]) => {
         setFormData(prev => ({ ...prev, [field]: value }));

@@ -46,10 +46,12 @@ const Footer: React.FC = () => {
                     <div className="lg:col-span-2">
                         <h3 className="text-sm font-bold text-slate-900 tracking-wider uppercase mb-6 border-l-2 border-techBlue-500 pl-3">产品中心</h3>
                         <ul className="space-y-3">
-                            <li><Link to="/products?category=THERMAL" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">导热界面材料</Link></li>
-                            <li><Link to="/products?category=ADHESIVE" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">结构粘接胶</Link></li>
-                            <li><Link to="/products?category=COATING" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">三防涂覆材料</Link></li>
-                            <li><Link to="/products?category=SEMICONDUCTOR" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">半导体封装 (Underfill)</Link></li>
+                            <li><Link to="/products?category=THERMAL" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">导热材料</Link></li>
+                            <li><Link to="/products?category=ADHESIVE" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">胶粘剂</Link></li>
+                            <li><Link to="/products?category=COATING" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">三防漆</Link></li>
+                            <li><Link to="/products?category=SEMICONDUCTOR" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">半导体</Link></li>
+                            <li><Link to="/products?category=EQUIPMENT" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">流体设备</Link></li>
+                            <li><Link to="/products?category=PRECISION" className="text-slate-600 hover:text-techBlue-600 text-sm transition-colors block hover:translate-x-1 duration-200">精密组件</Link></li>
                         </ul>
                     </div>
 
