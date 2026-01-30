@@ -203,12 +203,16 @@ const Products: React.FC = () => {
 
             {/* Header Section */}
             <div className="relative h-[400px] flex items-center justify-center overflow-hidden bg-slate-900 border-b border-slate-800">
-                {/* Abstract Background - Replaces Image to prevent broken links and align with tech style */}
+                {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-grid-pattern opacity-[0.05]"></div>
-                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-techBlue-500/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-800/50 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-900/80"></div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1591345258414-049830560370?q=80&w=2070&auto=format&fit=crop" 
+                        alt="Advanced Technology Background" 
+                        className="w-full h-full object-cover opacity-50"
+                    />
+                    <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 </div>
 
                 {/* Content */}
@@ -220,7 +224,7 @@ const Products: React.FC = () => {
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight drop-shadow-lg">
                         产品与解决方案
                     </h1>
-                    <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-md">
                         从高性能电子材料到微米级流体控制设备。<br className="hidden md:block" />
                         我们提供软硬结合的一站式封装工艺解决方案。
                     </p>
